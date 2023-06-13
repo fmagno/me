@@ -68,8 +68,8 @@
     },
     {
       "type": "text",
-      "version": 1677,
-      "versionNonce": 356116352,
+      "version": 1678,
+      "versionNonce": 374286208,
       "isDeleted": false,
       "id": "rWxPnKiBXvTJgi6MYEs4v",
       "fillStyle": "solid",
@@ -80,7 +80,7 @@
       "angle": 5.858042556647639,
       "x": 404.833316680902,
       "y": -598.3053126286046,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#ffffff",
       "backgroundColor": "#ffffff",
       "width": 39.70000076293945,
       "height": 27.12206341374506,
@@ -93,7 +93,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1686647461135,
+      "updated": 1686651600459,
       "link": null,
       "locked": false,
       "fontSize": 11.300859755727108,
@@ -300,8 +300,8 @@
     },
     {
       "type": "arrow",
-      "version": 1892,
-      "versionNonce": 939925632,
+      "version": 1898,
+      "versionNonce": 2140074112,
       "isDeleted": false,
       "id": "1csZLBFcj9c4UDBUiBOYg",
       "fillStyle": "solid",
@@ -311,8 +311,8 @@
       "opacity": 100,
       "angle": 0,
       "x": 397.07969005870416,
-      "y": -560.1211252463671,
-      "strokeColor": "#1e1e1e",
+      "y": -560.464633195572,
+      "strokeColor": "#ffffff",
       "backgroundColor": "#ffffff",
       "width": 53.69998050351694,
       "height": 0,
@@ -322,18 +322,18 @@
         "type": 2
       },
       "boundElements": [],
-      "updated": 1686647461135,
+      "updated": 1686651604075,
       "link": null,
       "locked": false,
       "startBinding": {
         "elementId": "rWxPnKiBXvTJgi6MYEs4v",
-        "focus": 1.2185481470579556,
-        "gap": 15.5366417565848
+        "focus": 1.1820104263451234,
+        "gap": 15.310508838244402
       },
       "endBinding": {
         "elementId": "EwHlZxTzj3NMtz7do0Rz1",
-        "focus": -0.04625212617502913,
-        "gap": 8.659538443676489
+        "focus": -0.031364555536715626,
+        "gap": 8.416641643402237
       },
       "lastCommittedPoint": null,
       "startArrowhead": null,
@@ -449,8 +449,8 @@
     },
     {
       "type": "text",
-      "version": 1512,
-      "versionNonce": 2086142080,
+      "version": 1513,
+      "versionNonce": 711358336,
       "isDeleted": false,
       "id": "oaneXJ3HUr82BP2Mw7tTE",
       "fillStyle": "solid",
@@ -461,7 +461,7 @@
       "angle": 5.858042556647639,
       "x": 531.9170163808893,
       "y": -416.88073736777875,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#ffffff",
       "backgroundColor": "#ffffff",
       "width": 39.70000076293945,
       "height": 27.12206341374506,
@@ -469,7 +469,7 @@
       "groupIds": [],
       "roundness": null,
       "boundElements": [],
-      "updated": 1686647461135,
+      "updated": 1686651611123,
       "link": null,
       "locked": false,
       "fontSize": 11.300859755727108,
@@ -578,8 +578,8 @@
     },
     {
       "type": "arrow",
-      "version": 1512,
-      "versionNonce": 2108809344,
+      "version": 1513,
+      "versionNonce": 1862189184,
       "isDeleted": false,
       "id": "jMkOerpkdHxHkUMtM72qk",
       "fillStyle": "solid",
@@ -590,7 +590,7 @@
       "angle": 0,
       "x": 533.2069820549848,
       "y": -382.0806503961465,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#ffffff",
       "backgroundColor": "#ffffff",
       "width": 39.12964522853753,
       "height": 0,
@@ -600,7 +600,7 @@
         "type": 2
       },
       "boundElements": [],
-      "updated": 1686647461135,
+      "updated": 1686651611123,
       "link": null,
       "locked": false,
       "startBinding": {
@@ -662,8 +662,8 @@
     },
     {
       "type": "arrow",
-      "version": 1599,
-      "versionNonce": 497143936,
+      "version": 1600,
+      "versionNonce": 363562880,
       "isDeleted": false,
       "id": "2eWEIp91OZlYKzSW6dfrw",
       "fillStyle": "solid",
@@ -674,7 +674,7 @@
       "angle": 0,
       "x": 533.5598188968535,
       "y": -340.5081164240807,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#ffffff",
       "backgroundColor": "#ffffff",
       "width": 39.12964522853753,
       "height": 0,
@@ -684,7 +684,7 @@
         "type": 2
       },
       "boundElements": [],
-      "updated": 1686647461136,
+      "updated": 1686651611123,
       "link": null,
       "locked": false,
       "startBinding": {

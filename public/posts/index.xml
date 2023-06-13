@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Hugo Site</title>
-    <link>https://fmagno.github.io/qanda/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
+    <title>Posts on Terminal</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jun 2023 15:00:35 +0100</lastBuildDate><atom:link href="https://fmagno.github.io/qanda/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jun 2023 15:00:35 +0100</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Layered architecture of a REST API</title>
-      <link>https://fmagno.github.io/qanda/posts/layered_architecture/</link>
+      <link>/posts/layered_architecture/</link>
       <pubDate>Fri, 09 Jun 2023 15:00:35 +0100</pubDate>
       
-      <guid>https://fmagno.github.io/qanda/posts/layered_architecture/</guid>
+      <guid>/posts/layered_architecture/</guid>
       <description>Q: How to organise data structures and logic of a REST API considering a layered architecture?
 A: How is the logic displaced across the various layers? Routing The routing layer serves as a bridge between the client making the request and the underlying functionality of the API. It is responsible for parsing the incoming requests, extracting relevant information such as the requested resource path, query parameters, and HTTP method (GET, POST, PUT, DELETE, etc.</description>
       <content>&lt;h1 id=&#34;q&#34;&gt;Q:&lt;/h1&gt;
