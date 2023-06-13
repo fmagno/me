@@ -1,4 +1,4 @@
 baseURL = 'https://fmagno.github.io/qanda/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Bite size Q&A'
 theme = "terminal"

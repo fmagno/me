@@ -1,7 +1,7 @@
 ---
 title: "Layered architecture of a REST API"
 date: 2023-06-09T15:00:35+01:00
-draft: true
+draft: false
 ---
 
 # Q:
