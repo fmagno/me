@@ -11,7 +11,7 @@ draft: false
 
 # Howdy!
 
-Here's a brief description of my work experience relevant to web development.
+Here's a brief description of my work experience relevant to software development.
 
 ---
 
@@ -22,13 +22,13 @@ Delivering technical support to customers through an active and involved method.
 **Technologies**
 
 `python`
-[`fastapi`]()
-[`sqlalchemy 2.0`]()
-[`asyncio`]()
-[`postgres`]()
-[`typescript`]()
-[`nestjs`]()
-[`GKE`]()
+`fastapi`
+`sqlalchemy 2.0`
+`asyncio`
+`postgres`
+`typescript`
+`nestjs`
+`GKE`
 
 
 **Integrations**
@@ -44,9 +44,9 @@ Delivering technical support to customers through an active and involved method.
 
 **Challenges**
 
-[`invoicing`]()
+`invoicing`
 [`oauth2-auth code flow`](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)
-[`shopify-python async graphql client`]()
+`shopify-python async graphql client`
 
 ---
 
@@ -56,13 +56,13 @@ Development of software services for provisioning and testing the Unity engine.
 
 **Technologies**
 
-[`Go`]()
-[`Python`]()
-[`Openstack`]()
-[`Docker`]()
-[`raspberry pi`]()
-[`gRPC`]()
-[`NSQ`]()
+`Go`
+`Python`
+`Openstack`
+`Docker`
+`raspberry pi`
+`gRPC`
+`NSQ`
 
 ---
 
@@ -77,13 +77,13 @@ Development of a scalable and virtualised environment for software validation
 
 **Technologies**
 
-[`Python`]()
-[`Django`]()
-[`RPyC`]()
-[`Xen`]()
-[`KVM/QEMU`]()
-[`Puppet`]()
-[`Linux`]()
+`Python`
+`Django`
+`RPyC`
+`Xen`
+`KVM/QEMU`
+`Puppet`
+`Linux`
 
 ---
 
@@ -95,7 +95,7 @@ Integration of a costal surveillance/detection vehicle (Ural 4320).
 
 **Technologies**
 
-[`LabVIEW`]()
-[`C/C++`]()
-[`Solidworks`]()
+`LabVIEW`
+`C/C++`
+`Solidworks`
 
