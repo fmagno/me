@@ -1,11 +1,14 @@
-# baseURL = 'https://fmagno.github.io/qanda/'
-baseURL = '/'
+baseURL = 'https://fmagno.github.io/qanda/'
+# baseURL = '/'
 languageCode = 'en-us'
 title = 'Bite size Q&A'
 theme = ['hugo-shortcode-roneo-collection', 'terminal']
+# theme = "terminal"
+themeColor = "orange"
 paginate = 5
 centerTheme = true
 Toc = true
+
 
 
 [languages]
