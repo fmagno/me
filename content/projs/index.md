@@ -4,8 +4,6 @@ draft: false
 ---
 
 
-
-
 # [SURL-short url {{< ico "link" >}}](https://github.com/fmagno/surl)
 
 **Features**

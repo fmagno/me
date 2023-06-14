@@ -29,6 +29,7 @@ Delivering technical support to customers through an active and involved method.
 `typescript`
 `nestjs`
 `GKE`
+`kubernetes`
 
 
 **Integrations**
