@@ -1,4 +1,4 @@
-baseURL = 'https://fmagno.github.io/qanda/'
+baseURL = 'https://fmagno.github.io/me/'
 # baseURL = '/'
 languageCode = 'en-us'
 title = 'Bite size Q&A'
@@ -31,7 +31,7 @@ Toc = true
 
     [languages.en.params.logo]
       logoText = "fmagno"
-      logoHomeLink = "/qanda/about"
+      logoHomeLink = "/me/about"
 
     [languages.en.menu]
         [[languages.en.menu.main]]

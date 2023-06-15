@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/layered_architecture/</loc>
+    <loc>https://fmagno.github.io/me/posts/layered_architecture/</loc>
     <lastmod>2023-06-09T15:00:35+01:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://fmagno.github.io/me/posts/</loc>
     <lastmod>2023-06-09T15:00:35+01:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>https://fmagno.github.io/me/</loc>
     <lastmod>2023-06-09T15:00:35+01:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://fmagno.github.io/me/categories/</loc>
   </url><url>
-    <loc>/about/</loc>
+    <loc>https://fmagno.github.io/me/about/</loc>
   </url><url>
-    <loc>/projs/</loc>
+    <loc>https://fmagno.github.io/me/projs/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://fmagno.github.io/me/tags/</loc>
   </url>
 </urlset>
