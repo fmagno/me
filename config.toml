@@ -4,12 +4,13 @@ languageCode = 'en-us'
 title = 'Bite size Q&A'
 theme = ['hugo-shortcode-roneo-collection', 'terminal']
 # theme = "terminal"
-themeColor = "orange"
 paginate = 5
 centerTheme = true
 Toc = true
 
-
+[params]
+themeColor = "orange"
+centerTheme = true
 
 [languages]
   [languages.en]
