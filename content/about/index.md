@@ -9,9 +9,12 @@ draft: false
 [`linkedin`](https://www.linkedin.com/in/francisco-lu%C3%ADs-magno-morgado-781a23b/)
 
 
+<!-- {{< figure src="" title="Me" width="50" height="50" >}} -->
+
+
 # Howdy!
 
-Here's a brief description of my work experience relevant to software development.
+Here's a brief description of my work experience relevant to the engineering industry.
 
 ---
 
@@ -99,4 +102,32 @@ Integration of a costal surveillance/detection vehicle (Ural 4320).
 `LabVIEW`
 `C/C++`
 `Solidworks`
+
+---
+
+## Bosch Security Systems (2010 - 2011): QA engineer, Portugal
+
+Development of testing devices/jigs for surveillance and communication
+systems.
+
+**Technologies**
+
+`LabVIEW`
+`Eagle-PCB design`
+
+---
+
+## Telecommunications Institute (2009 - 2010): Researcher, Portugal
+
+Study and development of predistortion models for nonlinear power amplifiers.
+
+**Technologies**
+
+`Matlab`
+
+---
+
+## Education: University of Aveiro, Portugal
+
+MSc Electronics and Telecommunications
 
