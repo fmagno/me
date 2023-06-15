@@ -129,5 +129,5 @@ Study and development of predistortion models for nonlinear power amplifiers.
 
 ## Education: University of Aveiro, Portugal
 
-MSc Electronics and Telecommunications
+MSc Electronics and Telecommunications Engineering
 
