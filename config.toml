@@ -1,7 +1,7 @@
 baseURL = 'https://fmagno.github.io/me/'
 # baseURL = '/'
 languageCode = 'en-us'
-title = 'Bite size Q&A'
+title = 'me'
 theme = ['hugo-shortcode-roneo-collection', 'terminal']
 # theme = "terminal"
 paginate = 5
