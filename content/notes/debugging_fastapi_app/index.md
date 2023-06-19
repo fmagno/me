@@ -2,6 +2,7 @@
 title: "Debugging a fastapi app"
 date: 2023-06-19
 draft: false
+description: " "
 ---
 
 [`source code on github`]("https://github.com/fmagno/dfa")

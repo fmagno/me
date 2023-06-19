@@ -2,6 +2,7 @@
 title: "Layered architecture of a REST API - WIP"
 date: 2023-06-09T15:00:35+01:00
 draft: false
+description: " "
 ---
 
 
