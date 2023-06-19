@@ -4,10 +4,6 @@ date: 2023-06-09T15:00:35+01:00
 draft: false
 ---
 
-# Q:
-How to organise data structures and logic of a REST API considering a layered architecture?
-
-# A:
 
 ## How is the logic displaced across the various layers?
 

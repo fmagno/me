@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Layered architecture of a REST API - WIP :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How is the logic displaced across the various layers? Routing The routing layer serves as a bridge between the client making the request and the underlying functionality of the API. It is responsible for parsing the incoming requests, extracting relevant information such as the requested resource path, query parameters, and HTTP method (GET, POST, PUT, DELETE, etc.), and determining how to handle the request.
+Services The services layer acts as a bridge between the routing layer and the underlying database or the API Client layers." />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://fmagno.github.io/me/notes/layered_architecture/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://fmagno.github.io/me/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://fmagno.github.io/me/img/theme-colors/orange.png">
+  <link rel="apple-touch-icon" href="https://fmagno.github.io/me/img/theme-colors/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Layered architecture of a REST API - WIP">
+<meta property="og:description" content="How is the logic displaced across the various layers? Routing The routing layer serves as a bridge between the client making the request and the underlying functionality of the API. It is responsible for parsing the incoming requests, extracting relevant information such as the requested resource path, query parameters, and HTTP method (GET, POST, PUT, DELETE, etc.), and determining how to handle the request.
+Services The services layer acts as a bridge between the routing layer and the underlying database or the API Client layers." />
+<meta property="og:url" content="https://fmagno.github.io/me/notes/layered_architecture/" />
+<meta property="og:site_name" content="Terminal" />
+
+  
+    <meta property="og:image" content="https://fmagno.github.io/me/img/favicon/orange.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2023-06-09 15:00:35 &#43;0100 WEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/me/home">
+  <div class="logo">
+    fmagno
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/me/about">about</a></li>
+        
+      
+        
+          <li><a href="/me/notes">notes</a></li>
+        
+      
+        
+          <li><a href="/me/projs">projs</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/me/about" >about</a></li>
+        
+      
+        
+          <li><a href="/me/notes" >notes</a></li>
+        
+      
+        
+          <li><a href="/me/projs" >projs</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://fmagno.github.io/me/notes/layered_architecture/">Layered architecture of a REST API - WIP</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2023-06-09</time></div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="how-is-the-logic-displaced-across-the-various-layers">How is the logic displaced across the various layers?<a href="#how-is-the-logic-displaced-across-the-various-layers" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<!-- raw HTML omitted -->
+
+<img src="images/layers.png"  alt="Layered architecture."  class="left"    />
+
+
+<h3 id="routing">Routing<a href="#routing" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>The routing layer serves as a bridge between the client making the request and the underlying functionality of the API. It is responsible for parsing the incoming requests, extracting relevant information such as the requested resource path, query parameters, and HTTP method (GET, POST, PUT, DELETE, etc.), and determining how to handle the request.</p>
+<h3 id="services">Services<a href="#services" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>The services layer acts as a bridge between the routing layer and the underlying database or the API Client layers. Its primary purpose is to encapsulate the business logic and application-specific operations related to the API&rsquo;s resources.</p>
+<h3 id="database">Database<a href="#database" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>It is responsible for storing, managing, and retrieving data from a database system.</p>
+<h3 id="api-client">API Client<a href="#api-client" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>The layer comprised of API clients to interact with external REST APIs can be referred to as the &ldquo;API Client Layer&rdquo; or the &ldquo;Integration Layer.&rdquo; It acts as an intermediary between your application and external services, allowing you to consume and interact with their RESTful APIs.</p>
+<h2 id="schemas">Schemas<a href="#schemas" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Each layer should have its own set of schemas and the client of a given layer should only use the logic of that layer in conjunction with its set of schemas and none else. For example, let&rsquo;s say <code>RouteA</code> depends on <code>ServiceA</code> to accomplish some task. In this scenario, <code>RouteA</code> has to map all required schemas at the routing layer onto schemas of the service layer before calling routines of <code>ServiceA</code>. The same would also apply if the service layer would use the data layer or an API Client.</p>
+<!-- raw HTML omitted -->
+
+<img src="images/layers_mapping.png"  alt="Layers mapping."  class="left"    />
+
+
+<h2 id="implementation">Implementation<a href="#implementation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># app/user/schemas.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserCreate</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    name: str
+</span></span><span style="display:flex;"><span>    height: int
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserRead</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    id: uuid<span style="color:#f92672">.</span>UUID
+</span></span><span style="display:flex;"><span>    name: str
+</span></span><span style="display:flex;"><span>    height: int
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserRouteCreate</span>(UserCreate):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserRouteRead</span>(UserRead):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserSvcCreate</span>(UserCreate):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserSvcRead</span>(UserRead):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># app/user/routes.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> parse_obj_as
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> app.user.deps <span style="color:#f92672">import</span> get_user_service
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> app.user.schemas <span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    UserRouteCreate,
+</span></span><span style="display:flex;"><span>    UserRouteRead,
+</span></span><span style="display:flex;"><span>    UserSvcCreate,
+</span></span><span style="display:flex;"><span>    UserSvcRead,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> app.user.service <span style="color:#f92672">import</span> UserService
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@router.post</span>(<span style="color:#e6db74">&#34;/users&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_user</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>,
+</span></span><span style="display:flex;"><span>    user_svc: UserService <span style="color:#f92672">=</span> Depends(get_user_service),
+</span></span><span style="display:flex;"><span>    user: UserRouteCreate,
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">-&gt;</span> UserRouteRead:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Create new user.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    user_svc_read: UserSvcRead <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> user_svc<span style="color:#f92672">.</span>create_user(
+</span></span><span style="display:flex;"><span>        user<span style="color:#f92672">=</span>parse_obj_as(UserSvcCreate, user),
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> parse_obj_as(UserRouteRead, user_svc_read)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># app/user/deps.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> app.db.deps <span style="color:#f92672">import</span> get_db
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_user_service</span>(
+</span></span><span style="display:flex;"><span>    db: AsyncSession <span style="color:#f92672">=</span> Depends(get_db),
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">-&gt;</span> UserService:
+</span></span><span style="display:flex;"><span>    user_svc: UserService <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> create_service(db<span style="color:#f92672">=</span>db)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> user_svc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># app/user/services.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span>(BaseService):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        db: AsyncSession,
+</span></span><span style="display:flex;"><span>    ):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__(db<span style="color:#f92672">=</span>db)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_user</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        user: UserSvcCreate,
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">-&gt;</span> UserSvcRead:
+</span></span><span style="display:flex;"><span>        user_db: Optional[UserDb] <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> crud_user<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>            db<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>db,
+</span></span><span style="display:flex;"><span>            obj_in<span style="color:#f92672">=</span>parse_obj_as(UserSvcCreate, user),
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        user_svc_read <span style="color:#f92672">=</span> parse_obj_as(UserSvcRead, user_db)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> user_svc_read
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Facade #############################</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_user_service</span>(
+</span></span><span style="display:flex;"><span>    db: AsyncSession,
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">-&gt;</span> UserService:
+</span></span><span style="display:flex;"><span>    user_svc: UserService <span style="color:#f92672">=</span> UserService(db<span style="color:#f92672">=</span>db)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> user_svc
+</span></span></code></pre></div>
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        
+    
+      
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/me/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

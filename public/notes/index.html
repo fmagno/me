@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Notes :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://fmagno.github.io/me/notes/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://fmagno.github.io/me/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://fmagno.github.io/me/img/theme-colors/orange.png">
+  <link rel="apple-touch-icon" href="https://fmagno.github.io/me/img/theme-colors/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Notes">
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://fmagno.github.io/me/notes/" />
+<meta property="og:site_name" content="Terminal" />
+
+  
+    <meta property="og:image" content="https://fmagno.github.io/me/img/favicon/orange.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+  <link href="/me/notes/index.xml" rel="alternate" type="application/rss+xml" title="Terminal" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/me/home">
+  <div class="logo">
+    fmagno
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/me/about">about</a></li>
+        
+      
+        
+          <li><a href="/me/notes">notes</a></li>
+        
+      
+        
+          <li><a href="/me/projs">projs</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/me/about" >about</a></li>
+        
+      
+        
+          <li><a href="/me/notes" >notes</a></li>
+        
+      
+        
+          <li><a href="/me/projs" >projs</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+
+</header>
+
+
+  <div class="content">
+    
+  
+  <div class="posts">
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="https://fmagno.github.io/me/notes/debugging_fastapi_app/">Debugging a fastapi app</a>
+        </h1>
+        <div class="post-meta"><time class="post-date">2023-06-19</time></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            source code on github
+Objective Debug remotely a fastapi app with VSCode using the Debug Adapter Protocol (DAP).
+Overview Matching host/container source code launch.json
+{ &#34;version&#34;: &#34;0.2.0&#34;, &#34;configurations&#34;: [ { &#34;name&#34;: &#34;Python: Remote Attach&#34;, &#34;type&#34;: &#34;python&#34;, &#34;request&#34;: &#34;attach&#34;, &#34;connect&#34;: { &#34;host&#34;: &#34;127.0.0.1&#34;, &lt;-- pydebug hostname &#34;port&#34;: 5678 &lt;-- pydebug port }, &#34;pathMappings&#34;: [ { &#34;localRoot&#34;: &#34;${workspaceFolder}/dfa&#34;, &lt;-- path to the app (host) &#34;remoteRoot&#34;: &#34;/dfa&#34; &lt;-- path to the app (container) } ], &#34;justMyCode&#34;: true } ] } Executing the app inside the container with debugpy Container entrypoint (/docker/local/api/start)
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button" href="/me/notes/debugging_fastapi_app/">Read more →</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="https://fmagno.github.io/me/notes/layered_architecture/">Layered architecture of a REST API - WIP</a>
+        </h1>
+        <div class="post-meta"><time class="post-date">2023-06-09</time></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            How is the logic displaced across the various layers? Routing The routing layer serves as a bridge between the client making the request and the underlying functionality of the API. It is responsible for parsing the incoming requests, extracting relevant information such as the requested resource path, query parameters, and HTTP method (GET, POST, PUT, DELETE, etc.), and determining how to handle the request.
+Services The services layer acts as a bridge between the routing layer and the underlying database or the API Client layers.
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button" href="/me/notes/layered_architecture/">Read more →</a>
+          </div>
+        
+      </article>
+    
+
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        
+    
+      
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/me/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

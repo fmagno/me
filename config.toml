@@ -32,7 +32,7 @@ centerTheme = true
 
     [languages.en.params.logo]
       logoText = "fmagno"
-      logoHomeLink = "/me/about"
+      logoHomeLink = "/me/home"
 
     [languages.en.menu]
         [[languages.en.menu.main]]
@@ -40,9 +40,9 @@ centerTheme = true
             name = "about"
             url = "/about"
         [[languages.en.menu.main]]
-            identifier = "posts"
-            name = "posts"
-            url = "/posts"
+            identifier = "notes"
+            name = "notes"
+            url = "/notes"
         [[languages.en.menu.main]]
             identifier = "projs"
             name = "projs"
