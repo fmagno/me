@@ -8,14 +8,14 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Jun 2023 19:00:00 +0100</lastBuildDate><atom:link href="https://fmagno.github.io/me/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Kubernetes basics</title>
+      <title>Kubernetes basics - WIP</title>
       <link>https://fmagno.github.io/me/notes/kubernetes_basics/</link>
       <pubDate>Mon, 19 Jun 2023 19:00:00 +0100</pubDate>
       
       <guid>https://fmagno.github.io/me/notes/kubernetes_basics/</guid>
       <description>source code on github
 Objective To showcase the basic components that comprise a kubernetes cluster.</description>
-      <content>&lt;p&gt;&lt;a href=&#34;%22https://github.com/fmagno/kub%22&#34;&gt;&lt;code&gt;source code on github&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+      <content>&lt;p&gt;&lt;a href=&#34;%22https://github.com/fmagno/kubernetes-exercises%22&#34;&gt;&lt;code&gt;source code on github&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;
 &lt;p&gt;To showcase the basic components that comprise a kubernetes cluster.&lt;/p&gt;
 </content>
@@ -318,7 +318,7 @@ Creation/retrieval of short urls OAuth2 - authorisation code flow (github) Sessi
 REST API Swagger docs AsyncIO Fastapi/pydantic sqlalchemy 2.0/postgres Alembic - migrations management Docker compose pytest localtunnel NBAPP - Newton basins app Features
 Submission/visualisation of nb fractals AsyncIO Data fetching Backend highlights
 REST API Fastapi/pydantic sqlalchemy 2.0/postgres Alembic - migrations management Docker compose pytest tusd minio Frontend highlights
-Typescript React Nextjs SWR cypress tailwind Kubernetes exercises Features/technologies</description>
+Typescript React Nextjs SWR cypress tailwind Debugging a fastapi app Features/technologies</description>
       <content>&lt;h1 id=&#34;surl-short-url-hahahugoshortcodes0hbhbhttpsgithubcomfmagnosurl&#34;&gt;&lt;a href=&#34;https://github.com/fmagno/surl&#34;&gt;SURL-short url &lt;style&gt;
       .ico {
         height: 1.15em;
@@ -399,7 +399,20 @@ Typescript React Nextjs SWR cypress tailwind Kubernetes exercises Features/techn
 &lt;li&gt;&lt;code&gt;cypress&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;tailwind&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;kubernetes-exercises-hahahugoshortcodes2hbhbhttpsgithubcomfmagnokubernetes-exercises&#34;&gt;&lt;a href=&#34;https://github.com/fmagno/kubernetes-exercises&#34;&gt;Kubernetes exercises &lt;svg aria-hidden=&#34;true&#34; class=&#34;default ico ico-link &#34;  xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon icon-tabler icon-tabler-link&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;
+&lt;h1 id=&#34;debugging-a-fastapi-app-hahahugoshortcodes2hbhbhttpsgithubcomfmagnodfa&#34;&gt;&lt;a href=&#34;https://github.com/fmagno/dfa&#34;&gt;Debugging a fastapi app &lt;svg aria-hidden=&#34;true&#34; class=&#34;default ico ico-link &#34;  xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon icon-tabler icon-tabler-link&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;
+  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;
+  &lt;path d=&#34;M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5&#34; /&gt;
+  &lt;path d=&#34;M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5&#34; /&gt;
+&lt;/svg&gt;
+&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Features/technologies&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Debug Adapter Protocol&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;debugpy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VSCode&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fastapi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;kubernetes-exercises-hahahugoshortcodes3hbhbhttpsgithubcomfmagnokubernetes-exercises&#34;&gt;&lt;a href=&#34;https://github.com/fmagno/kubernetes-exercises&#34;&gt;Kubernetes exercises &lt;svg aria-hidden=&#34;true&#34; class=&#34;default ico ico-link &#34;  xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon icon-tabler icon-tabler-link&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;
   &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;
   &lt;path d=&#34;M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5&#34; /&gt;
   &lt;path d=&#34;M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5&#34; /&gt;

@@ -8,14 +8,14 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Jun 2023 19:00:00 +0100</lastBuildDate><atom:link href="https://fmagno.github.io/me/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Kubernetes basics</title>
+      <title>Kubernetes basics - WIP</title>
       <link>https://fmagno.github.io/me/notes/kubernetes_basics/</link>
       <pubDate>Mon, 19 Jun 2023 19:00:00 +0100</pubDate>
       
       <guid>https://fmagno.github.io/me/notes/kubernetes_basics/</guid>
       <description>source code on github
 Objective To showcase the basic components that comprise a kubernetes cluster.</description>
-      <content>&lt;p&gt;&lt;a href=&#34;%22https://github.com/fmagno/kub%22&#34;&gt;&lt;code&gt;source code on github&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+      <content>&lt;p&gt;&lt;a href=&#34;%22https://github.com/fmagno/kubernetes-exercises%22&#34;&gt;&lt;code&gt;source code on github&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;
 &lt;p&gt;To showcase the basic components that comprise a kubernetes cluster.&lt;/p&gt;
 </content>

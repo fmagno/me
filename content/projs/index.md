@@ -54,6 +54,16 @@ draft: false
 - `cypress`
 - `tailwind`
 
+# [Debugging a fastapi app {{< ico "link" >}}](https://github.com/fmagno/dfa)
+
+**Features/technologies**
+
+- `Debug Adapter Protocol`
+- `debugpy`
+- `VSCode`
+- `fastapi`
+
+
 
 # [Kubernetes exercises {{< ico "link" >}}](https://github.com/fmagno/kubernetes-exercises)
 
