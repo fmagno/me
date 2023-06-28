@@ -53,3 +53,20 @@ draft: false
 - `SWR`
 - `cypress`
 - `tailwind`
+
+
+# [Kubernetes exercises {{< ico "link" >}}](https://github.com/fmagno/kubernetes-exercises)
+
+**Features/technologies**
+
+- `Setup deployment with a single command`
+- `Kubernetes`
+- `minikube`
+- `kubectl`
+- `Helm`
+- `docker`
+- `GNU Make`
+
+
+
+
