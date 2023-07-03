@@ -45,6 +45,7 @@ Delivering technical support to customers through an active and involved method.
 [`shippy-pro:shipment`](https://www.shippypro.com/en/)
 [`shippo:shipment`](https://goshippo.com/)
 [`shopify:e-commerce`](https://goshippo.com/)
+[`SendGrid:email`](https://sendgrid.com/)
 
 **Challenges**
 
