@@ -79,4 +79,16 @@ draft: false
 
 
 
+# [Akaw! - Windsurfing forecast {{< ico "link" >}}](https://github.com/fmagno/akaw)
+
+
+**Features/technologies**
+
+- Website [here](https://fmagno.github.io/akaw/)
+- `Nextjs`
+- `SWR`
+- `React`
+- `Tailwind/daisyui`
+
+
 
