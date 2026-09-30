@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ p.name }} · CV</title>
+<meta name="author" content="{{ p.name }}">
+<meta name="description" content="{{ p.headline }}. Python, AWS serverless, event-driven data pipelines.">
+<meta name="keywords" content="Senior Backend Engineer, Python, AWS Lambda, Event-driven, Data lake">
+<meta name="generator" content="Kami">
+<meta name="dcterms.created" content="{{ built }}">
+<style>
+  /* Design tokens and base styles adapted from kami resume-en (MIT, Tw93). */
+  @page { size: A4; margin: 11mm 13mm; background: #f5f4ed; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --parchment: #f5f4ed; --ivory: #faf9f5;
+    --border: #e8e6dc; --border-soft: #e5e3d8;
+    --near-black: #141413; --dark-warm: #3d3d3a; --olive: #504e49; --stone: #6b6a64;
+    --brand: #1B365D; --brand-tint: #EEF2F7;
+    --serif: Charter, Georgia, Palatino, "Times New Roman", serif;
+    --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  }
+  html, body { background: var(--parchment); }
+  @media screen { body { max-width: 210mm; margin: 0 auto; padding: 11mm 13mm; } }
+  body {
+    color: var(--near-black); font-family: var(--serif);
+    font-size: 9pt; line-height: 1.4; widows: 3; orphans: 3;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  strong { font-weight: 500; color: var(--brand); }
+  em { font-style: italic; }
+  code { font-family: var(--mono); font-size: 0.86em; color: var(--dark-warm); }
+
+  /* HEADER */
+  .header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 3.6mm; padding-bottom: 2.3mm; border-bottom: 0.6pt solid var(--border);
+  }
+  .name { font-size: 24pt; font-weight: 500; letter-spacing: -0.2pt; line-height: 1; white-space: nowrap; }
+  .contact { text-align: right; font-size: 8.6pt; color: var(--stone); line-height: 1.5; }
+  .contact .role { color: var(--brand); font-size: 10.5pt; font-weight: 500; }
+  .contact .sep { color: var(--stone); margin: 0 0.55em; }
+  .contact .cline { display: block; white-space: nowrap; }
+  .contact .role { display: block; margin-bottom: 0.6mm; }
+  .contact a { color: var(--dark-warm); }
+  .contact .loc { color: var(--olive); font-weight: 500; }
+
+  /* METRICS */
+  .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 5mm; margin-bottom: 2mm; }
+  .metric { padding: 1mm 0 1.2mm; display: flex; flex-direction: column; gap: 0.7mm; min-width: 0; }
+  .metric-value { font-size: 13pt; font-weight: 500; color: var(--brand); line-height: 1; white-space: nowrap; }
+  .metric-label { font-size: 8.4pt; color: var(--olive); line-height: 1.2; white-space: nowrap; }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size: 13pt; font-weight: 500; border-bottom: 0.5pt solid var(--border);
+    padding: 0 0 1mm 0; margin: 3.6mm 0 1.6mm 0;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 2.5mm;
+  }
+  .section-title .sub { font-weight: 400; font-size: 8.6pt; color: var(--stone); letter-spacing: 0.2pt; }
+  section:first-of-type .section-title { margin-top: 0; }
+
+  .summary { font-size: 9pt; line-height: 1.4; text-align: justify; }
+  .pills { display: flex; flex-wrap: wrap; gap: 1.6mm; margin-top: 2mm; list-style: none; }
+  .pills li { font-size: 7.8pt; font-weight: 500; color: var(--brand); background: var(--brand-tint);
+    padding: 0.5mm 2.4mm; border-radius: 6pt; white-space: nowrap; }
+
+  /* TIMELINE */
+  .timeline { display: flex; gap: 7mm; margin-bottom: 2.2mm; }
+  .tl-step { flex: 1; padding: 0.6mm 0; }
+  .tl-top { display: flex; align-items: baseline; gap: 2mm; margin-bottom: 0.5mm; }
+  .tl-year { font-size: 10.5pt; font-weight: 500; color: var(--brand); line-height: 1; }
+  .tl-head { font-size: 10.5pt; font-weight: 500; }
+  .tl-body { font-size: 8.6pt; color: var(--olive); line-height: 1.4; }
+
+  /* ROLE HEADER (current employer) */
+  .role-head { display: flex; justify-content: space-between; align-items: baseline; margin-top: 1mm; }
+  .role-org { font-size: 11.5pt; font-weight: 500; }
+  .role-org .detail { font-size: 9pt; font-weight: 400; color: var(--stone); margin-left: 1.5mm; }
+  .role-dates { font-size: 8.6pt; color: var(--stone); white-space: nowrap; }
+  .role-title { font-size: 9pt; color: var(--brand); font-weight: 500; margin-bottom: 0.6mm; }
+  .role-intro { font-size: 9pt; color: var(--dark-warm); line-height: 1.42; margin-bottom: 0.4mm; }
+
+  /* PROJECTS */
+  .project { padding: 1.6mm 0; break-inside: avoid; }
+  .proj-head { display: block; margin-bottom: 0.7mm; }
+  .proj-name { font-size: 10.5pt; font-weight: 500; }
+  .proj-kind { font-size: 9pt; color: var(--olive); margin-left: 1.2mm; }
+  .proj-role {
+    font-size: 7.8pt; color: var(--brand); font-weight: 500; float: right;
+    background: var(--brand-tint); padding: 0.4mm 1.6mm; border-radius: 2pt;
+    letter-spacing: 0.3pt; text-transform: uppercase; white-space: nowrap;
+  }
+  .proj-lines { display: table; width: 100%; }
+  .proj-row { display: table-row; }
+  .proj-label {
+    display: table-cell; width: 15mm; font-size: 7.8pt; color: var(--brand);
+    font-weight: 500; letter-spacing: 0.4pt; text-transform: uppercase;
+    padding: 0.5mm 0; vertical-align: top;
+  }
+  .proj-text { display: table-cell; font-size: 9pt; line-height: 1.4; padding: 0 0 0.4mm 1mm; }
+
+  .proj-stack { color: var(--stone); font-size: 8.4pt; }
+
+  /* EARLIER ROLES */
+  .job { display: flex; gap: 4mm; padding: 1.2mm 0; border-bottom: 0.3pt dotted var(--border); break-inside: avoid; }
+  .job:last-child { border-bottom: none; }
+  .job-when { width: 19mm; white-space: nowrap; flex-shrink: 0; font-size: 8.6pt; color: var(--stone); padding-top: 0.3mm; }
+  .job-main { flex: 1; }
+  .job-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-org { font-size: 10.2pt; font-weight: 500; }
+  .job-org .r { font-weight: 400; color: var(--brand); font-size: 9pt; margin-left: 1.5mm; }
+  .job-loc { font-size: 8.4pt; color: var(--stone); }
+  .job-body { font-size: 8.8pt; color: var(--dark-warm); line-height: 1.4; }
+
+  /* SIDE PROJECTS */
+  .os-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; }
+  .os-item { padding: 1.4mm 0; border-bottom: 0.3pt dotted var(--border); break-inside: avoid; }
+  .os-top { display: flex; justify-content: space-between; align-items: baseline; gap: 2mm; }
+  .os-name { font-size: 10pt; font-weight: 500; }
+  .os-year { font-size: 8.2pt; color: var(--stone); white-space: nowrap; }
+  .os-stack { font-size: 8.2pt; color: var(--brand); margin: 0.2mm 0 0.4mm; }
+  .os-desc { font-size: 8.6pt; color: var(--olive); line-height: 1.4; }
+
+  .os-line { font-size: 8.8pt; line-height: 1.5; color: var(--dark-warm); }
+  .os-line strong { color: var(--near-black); }
+  .os-st { color: var(--stone); }
+
+  /* SKILLS */
+  .skill-row { break-inside: avoid; display: flex; gap: 3mm; padding: 1.2mm 0; border-bottom: 0.3pt dotted var(--border); align-items: baseline; }
+  .skill-row:last-of-type { border-bottom: none; }
+  .skill-label {
+    font-size: 8pt; font-weight: 500; color: var(--brand); letter-spacing: 0.5pt;
+    text-transform: uppercase; width: 34mm; flex-shrink: 0; line-height: 1.35;
+  }
+  .skill-body { font-size: 8.9pt; line-height: 1.42; flex: 1; }
+
+  /* EDUCATION */
+  .edu-row { display: flex; justify-content: space-between; align-items: baseline; padding: 1.2mm 0; }
+  .edu-row .school { font-weight: 500; font-size: 10.5pt; }
+  .edu-row .major { color: var(--olive); font-size: 9pt; }
+  .edu-row .date { color: var(--stone); font-size: 8.6pt; }
+  .no-break { break-inside: avoid; }
+  .page-break { break-before: page; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="name">{{ p.name }}</div>
+  <div class="contact">
+    <span class="role">{{ p.headline }}</span>
+    <span class="cline">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% if not loop.last %}<span class="sep">·</span>{% endif %}{% endfor %}</span>
+    <span class="cline"><a href="mailto:{{ p.email }}">{{ p.email }}</a><span class="sep">·</span><span class="loc">{{ p.location }}</span></span>
+  </div>
+</div>
+
+<section>
+  <div class="section-title">Summary</div>
+  <div class="summary">{{ summary | mdi }}</div>
+  <ul class="pills">{% for x in p.pills %}<li>{{ x }}</li>{% endfor %}</ul>
+</section>
+
+<section>
+  {% set cur = current[0] %}
+  <div class="section-title">Experience</div>
+  {% for c in current %}
+  <div class="role-head">
+    <div class="role-org">{{ c.company }}<span class="detail">{{ c.detail }}</span></div>
+    <div class="role-dates">{{ c.start | date }} – {{ c.end | date }} · {{ c.location }}</div>
+  </div>
+  <div class="role-title">{{ c.role }}</div>
+  <div class="role-intro">{{ c.body | mdi }}</div>
+  {% endfor %}
+
+  {% for h in highlights %}
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name">{{ h.name }}</span>
+      <span class="proj-kind">· {{ h.kind }}</span>
+      <span class="proj-role">{{ h.badge }}</span>
+    </div>
+    <div class="proj-lines">
+      {% if h.lead %}
+      <div class="proj-row">
+        <div class="proj-label"></div>
+        <div class="proj-text">{{ h.lead | mdi }}</div>
+      </div>
+      {% endif %}
+      {% for label, text in h.parts.items() %}
+      <div class="proj-row">
+        <div class="proj-label">{{ label }}</div>
+        <div class="proj-text">{{ text | mdi }}</div>
+      </div>
+      {% endfor %}
+      {% if h.get('stack') %}<div class="proj-row"><div class="proj-label">Stack</div><div class="proj-text proj-stack">{{ h.stack }}</div></div>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<section>
+  <div class="section-title">Earlier experience<span class="sub">{{ earlier[-1].start | year }} – {{ earlier[0].end | year }}</span></div>
+  {% for e in earlier %}
+  <div class="job">
+    <div class="job-when">{{ e.start | year }} – {{ e.end | year }}</div>
+    <div class="job-main">
+      <div class="job-top">
+        <div class="job-org">{{ e.company }}<span class="r">{{ e.role }}</span></div>
+        <div class="job-loc">{{ e.location }}</div>
+      </div>
+      <div class="job-body">{{ e.body | mdi }}</div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<section>
+  <div class="section-title">Independent work<span class="sub">github.com/fmagno</span></div>
+  <div class="os-line">{% for s in side %}{% if s.get('url') %}<a href="{{ s.url }}">{{ s.name }}</a>{% else %}<strong>{{ s.name }}</strong>{% endif %} <span class="os-st">({{ s.stack }}, {{ s.year }})</span>{% if not loop.last %} · {% endif %}{% endfor %}</div>
+</section>
+
+<section>
+  <div class="section-title">{{ skills_title }}</div>
+  {% for label, text in skills.items() %}
+  <div class="skill-row">
+    <div class="skill-label">{{ label }}</div>
+    <div class="skill-body">{{ text | mdi }}</div>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="no-break">
+  <div class="section-title">Education &amp; languages</div>
+  {% for ed in edu.entries %}
+  <div class="edu-row">
+    <div><span class="school">{{ ed.school }}</span><span class="major"> · {{ ed.degree }}</span></div>
+    <div class="date">{{ edu.languages }}</div>
+  </div>
+  {% endfor %}
+</section>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ p.short_name }} · {{ p.headline }}</title>
+<meta name="description" content="{{ p.name }}: {{ p.headline }}. Python, AWS Lambda, event-driven data pipelines, observability.">
+<meta property="og:title" content="{{ p.name }} · {{ p.headline }}">
+<meta property="og:description" content="{{ p.headline }}. {{ p.location }}.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="{{ p.site_url }}">
+<meta property="og:image" content="{{ p.site_url }}assets/me.jpeg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%231B365D%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Georgia%22 font-size=%2217%22 fill=%22%23faf9f5%22 text-anchor=%22middle%22%3Efm%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="{{ p.site_url }}">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"{{ p.name }}","jobTitle":"{{ p.headline }}",
+ "email":"mailto:{{ p.email }}","url":"{{ p.site_url }}","sameAs":[{% for l in p.links %}"{{ l.url }}"{% if not loop.last %},{% endif %}{% endfor %}]}
+</script>
+<style>
+/* Tokens and component language adapted from kami landing-page-en (MIT, Tw93). */
+:root {
+  --parchment: #f5f4ed; --ivory: #faf9f5; --warm-sand: #e8e6dc;
+  --brand: #1B365D; --brand-light: #2D5A8A; --brand-tint: #EEF2F7;
+  --near-black: #141413; --dark-warm: #3d3d3a; --olive: #504e49; --stone: #6b6a64;
+  --border: #e8e6dc; --border-soft: #e5e3d8; --line: #d8d5c8;
+  --serif: Charter, Georgia, Palatino, "Times New Roman", serif;
+  --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  --ui: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--parchment); color: var(--near-black);
+  font-family: var(--serif); font-size: 16px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--brand); text-decoration: none; transition: color .15s; }
+a:hover { color: var(--brand-light); }
+strong { font-weight: 600; color: var(--brand); }
+code { font-family: var(--mono); font-size: .84em; color: var(--dark-warm); background: var(--ivory);
+       padding: 1px 5px; border-radius: 4px; border: 1px solid var(--border-soft); white-space: nowrap; }
+
+.page { max-width: 1040px; margin: 0 auto; padding: 0 48px 96px; }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--parchment) 88%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.nav-inner { max-width: 1040px; margin: 0 auto; padding: 14px 48px;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.nav-mark { font-weight: 600; color: var(--near-black); font-size: 17px; }
+.nav-links { display: flex; gap: 22px; font-family: var(--ui); font-size: 13px; letter-spacing: .3px; }
+.nav-links a { color: var(--stone); }
+.nav-links a:hover { color: var(--brand); }
+.nav-links .cv { color: var(--brand); font-weight: 600; }
+
+/* HERO */
+.hero { padding: 88px 0 56px; border-bottom: 1px solid var(--border-soft);
+  display: grid; grid-template-columns: 1fr auto; gap: 56px; align-items: start; }
+.eyebrow { font-family: var(--ui); font-size: 12px; font-weight: 500; letter-spacing: .5px;
+  text-transform: uppercase; color: var(--stone); margin: 0 0 20px; }
+.eyebrow .dot { color: var(--line); margin: 0 8px; }
+h1 { font-size: clamp(38px, 6vw, 60px); font-weight: 500; line-height: 1.05; letter-spacing: -1px; margin: 0 0 22px; }
+.hero-lede { font-size: 17px; line-height: 1.65; color: var(--dark-warm); max-width: 720px; margin: 0 0 22px;
+  text-align: justify; text-justify: inter-word; hyphens: manual; }
+.hero-lede strong { font-weight: 500; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; padding: 0; list-style: none; }
+.pills li { font-family: var(--ui); font-size: 13px; font-weight: 500; letter-spacing: .2px;
+  color: var(--brand); background: var(--brand-tint); border: 1px solid var(--border);
+  padding: 5px 14px; border-radius: 999px; white-space: nowrap; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--serif); font-weight: 500;
+  font-size: 15px; padding: 12px 26px; border-radius: 999px; border: 1.5px solid var(--brand);
+  transition: background .15s, color .15s, transform .15s; }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--brand); color: var(--ivory); }
+.btn-primary:hover { background: var(--brand-light); border-color: var(--brand-light); color: var(--ivory); }
+.btn-ghost { color: var(--brand); }
+.btn-ghost:hover { background: var(--brand-tint); }
+.avatar { width: 168px; height: 168px; margin-top: 34px; border-radius: 50%; object-fit: cover;
+  border: 1px solid var(--border); filter: saturate(.85); }
+
+/* METRICS */
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 40px 0 8px; }
+.metric-value { font-size: 30px; font-weight: 500; color: var(--brand); line-height: 1.1; }
+.metric-label { font-size: 14px; color: var(--olive); margin-top: 4px; }
+
+/* SECTIONS */
+section { padding-top: 80px; scroll-margin-top: 56px; }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 28px; }
+h2 { font-size: 28px; font-weight: 500; margin: 0; letter-spacing: -.3px; }
+.section-head .sub { font-family: var(--ui); font-size: 13px; color: var(--stone); }
+
+/* ARC */
+.arc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.arc-year { font-size: 15px; color: var(--brand); font-weight: 600; font-variant-numeric: tabular-nums; }
+.arc-title { font-size: 20px; font-weight: 500; margin: 2px 0 6px; }
+.arc-body { color: var(--olive); font-size: 15px; margin: 0; }
+
+/* WORK CARDS */
+.org-line { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 20px; color: var(--stone); font-size: 15px; }
+.org-line b { color: var(--near-black); font-weight: 500; font-size: 20px; margin-right: 8px; }
+.cards { display: grid; gap: 20px; }
+.card { background: var(--ivory); border: 1px solid var(--border-soft); border-radius: 14px; padding: 28px 30px;
+  transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--line); transform: translateY(-1px); }
+.card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card h3 { font-size: 22px; font-weight: 500; margin: 0; }
+.badge { font-family: var(--ui); font-size: 11px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase;
+  color: var(--brand); background: var(--brand-tint); padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.card-kind { color: var(--stone); font-size: 14px; margin: 4px 0 14px; }
+.card-lead { font-size: 17px; color: var(--dark-warm); margin: 0 0 18px; }
+.card-impact { border-top: 1px dotted var(--line); margin-top: 18px; padding-top: 14px; }
+.card-impact p { margin: 0; font-size: 15px; }
+.card-path { font-size: 16px; line-height: 1.65; text-align: justify; margin-bottom: 0; }
+.card-cols { display: grid; grid-template-columns: 1.25fr 1fr; gap: 28px; border-top: 1px dotted var(--line); padding-top: 16px; }
+.col-label { font-family: var(--ui); font-size: 11px; font-weight: 600; letter-spacing: .6px;
+  text-transform: uppercase; color: var(--brand); margin-bottom: 6px; }
+.card-cols p { margin: 0; font-size: 15px; color: var(--near-black); }
+.card-stack { margin-top: 16px; padding-top: 14px; border-top: 1px dotted var(--line); font-size: 13.5px; color: var(--stone); line-height: 1.6; }
+.card-stack .col-label { display: inline; margin-right: 6px; }
+
+/* EXPERIENCE */
+.jobs { display: grid; }
+.job { display: grid; grid-template-columns: 130px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px dotted var(--line); }
+.job:last-child { border-bottom: none; }
+.job-when { color: var(--stone); font-size: 15px; font-variant-numeric: tabular-nums; padding-top: 2px; }
+.job-org { font-size: 19px; font-weight: 500; }
+.job-org .r { color: var(--brand); font-weight: 400; font-size: 16px; margin-left: 8px; }
+.job-org .loc { color: var(--stone); font-size: 14px; font-weight: 400; margin-left: 8px; }
+.job p { margin: 4px 0 0; color: var(--dark-warm); font-size: 15px; }
+
+/* SIDE PROJECTS */
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.tile { border: 1px solid var(--border-soft); border-radius: 12px; padding: 20px 22px; background: var(--ivory); }
+.tile-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.tile h3 { margin: 0; font-size: 18px; font-weight: 500; }
+.tile .year { color: var(--stone); font-size: 13px; font-family: var(--ui); }
+.tile .stack { color: var(--brand); font-size: 13px; font-family: var(--ui); margin: 4px 0 8px; }
+.tile p { margin: 0; color: var(--olive); font-size: 15px; }
+
+/* SKILLS */
+.skill { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 14px 0; border-bottom: 1px dotted var(--line); }
+.skill:last-child { border-bottom: none; }
+.skill-label { font-family: var(--ui); font-size: 12px; font-weight: 600; letter-spacing: .6px;
+  text-transform: uppercase; color: var(--brand); padding-top: 4px; }
+.skill-body { font-size: 16px; }
+.skill-body strong { font-weight: 500; }
+
+/* EXPERIENCE HEADER (mirrors the CV) */
+.org-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+.org-name { font-size: 22px; font-weight: 500; }
+.org-dates { color: var(--stone); font-size: 14px; font-family: var(--ui); }
+.org-role { color: var(--brand); font-weight: 500; margin: 2px 0 10px; }
+.org-intro { color: var(--dark-warm); max-width: 760px; margin: 0 0 26px; }
+.indep { font-size: 15.5px; line-height: 1.8; color: var(--dark-warm); margin: 0; }
+.indep b { color: var(--near-black); font-weight: 500; }
+.indep-st { color: var(--stone); font-size: 14px; }
+.edu-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 6px 0; color: var(--dark-warm); }
+.edu-row b { color: var(--near-black); font-weight: 500; }
+.edu-lang { color: var(--stone); font-size: 14px; }
+
+/* FOOTER */
+.foot { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: var(--stone); font-size: 14px; }
+.foot .edu b { color: var(--near-black); font-weight: 500; }
+
+/* MOTION */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(8px); animation: rise .6s cubic-bezier(.2,.7,.2,1) forwards; }
+  .reveal.d1 { animation-delay: .08s; } .reveal.d2 { animation-delay: .16s; } .reveal.d3 { animation-delay: .24s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+}
+
+/* RESPONSIVE */
+@media (max-width: 880px) {
+  .page, .nav-inner { padding-left: 24px; padding-right: 24px; }
+  .hero { grid-template-columns: 1fr; padding-top: 56px; gap: 28px; }
+  .avatar { order: -1; width: 112px; height: 112px; margin-top: 0; }
+  .metrics { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+  .arc, .card-cols { grid-template-columns: 1fr; gap: 20px; }
+  .skill { grid-template-columns: 1fr; gap: 4px; }
+}
+@media (max-width: 480px) {
+  .page, .nav-inner { padding-left: 16px; padding-right: 16px; }
+  .nav-links { gap: 14px; } .nav-links .hide-sm { display: none; }
+  .hero-lede { font-size: 16px; text-align: left; }
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 22px 20px; }
+  .job { grid-template-columns: 1fr; gap: 2px; }
+  section { padding-top: 60px; }
+}
+@media print { .nav, .actions { display: none; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top">{{ p.short_name }}</a>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#earlier" class="hide-sm">Earlier</a>
+      <a href="#projects" class="hide-sm">Independent work</a>
+      <a href="#skills" class="hide-sm">Skills</a>
+      <a href="cv.pdf" class="cv">CV · PDF</a>
+    </div>
+  </div>
+</nav>
+
+<main class="page" id="top">
+
+  <header class="hero">
+    <div>
+      <p class="eyebrow reveal">{{ p.headline }}<span class="dot">·</span>{{ p.location }}</p>
+      <h1 class="reveal d1">{{ p.name }}</h1>
+      <p class="hero-lede reveal d2">{{ summary | mdi }}</p>
+      <ul class="pills reveal d2" aria-label="Key technologies">{% for x in p.pills %}<li>{{ x }}</li>{% endfor %}</ul>
+      <div class="actions reveal d3">
+        <a class="btn btn-primary" href="cv.pdf">Download CV (PDF)</a>
+        <a class="btn btn-ghost" href="mailto:{{ p.email }}">{{ p.email }}</a>
+        <a class="btn btn-ghost" href="{{ p.links[0].url }}">GitHub</a>
+      </div>
+    </div>
+    <img class="avatar reveal" src="assets/me.jpeg" alt="Portrait of {{ p.short_name }}" width="168" height="168">
+  </header>
+
+
+  <section id="experience">
+    <div class="section-head"><h2>Experience</h2></div>
+    {% for c in current %}
+    <div class="org-head">
+      <div class="org-name">{{ c.company }}</div>
+      <div class="org-dates">{{ c.start | date }} – {{ c.end | date }} · {{ c.location }}</div>
+    </div>
+    <div class="org-role">{{ c.role }}</div>
+    <p class="org-intro">{{ c.body | mdi }}</p>
+    {% endfor %}
+    <div class="cards">
+      {% for h in highlights %}
+      <article class="card">
+        <div class="card-top"><h3>{{ h.name }}</h3><span class="badge">{{ h.badge }}</span></div>
+        <div class="card-kind">{{ h.kind }} · {{ h.period }}</div>
+        {% if h.lead %}
+        <p class="card-lead card-path">{{ h.lead | mdi }}</p>
+        {% elif h.parts.get('Role') %}
+        <p class="card-lead">{{ h.parts.Role | mdi }}</p>
+        {% endif %}
+        {% if h.parts.get('Actions') %}
+        <div class="card-cols">
+          <div><div class="col-label">What I did</div><p>{{ h.parts.Actions | mdi }}</p></div>
+          <div><div class="col-label">Result</div><p>{{ h.parts.Impact | mdi }}</p></div>
+        </div>
+        {% elif h.parts.get('Impact') %}
+        <div class="card-impact"><div class="col-label">Impact</div><p>{{ h.parts.Impact | mdi }}</p></div>
+        {% endif %}
+        {% if h.get('stack') %}<div class="card-stack"><span class="col-label">Stack</span> {{ h.stack }}</div>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="earlier">
+    <div class="section-head"><h2>Earlier experience</h2><span class="sub">{{ earlier[-1].start | year }} – {{ earlier[0].end | year }}</span></div>
+    <div class="jobs">
+      {% for e in earlier %}
+      <div class="job">
+        <div class="job-when">{{ e.start | year }} – {{ e.end | year }}</div>
+        <div>
+          <div class="job-org">{{ e.company }}<span class="r">{{ e.role }}</span><span class="loc">{{ e.location }}</span></div>
+          <p>{{ e.body | mdi }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head"><h2>Independent work</h2><a class="sub" href="{{ p.links[0].url }}">{{ p.links[0].label }}</a></div>
+    <p class="indep">{% for s in side %}{% if s.get('url') %}<a href="{{ s.url }}">{{ s.name }}</a>{% else %}<b>{{ s.name }}</b>{% endif %} <span class="indep-st">({{ s.stack }}, {{ s.year }})</span>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+  </section>
+
+  <section id="skills">
+    <div class="section-head"><h2>{{ skills_title }}</h2></div>
+    {% for label, text in skills.items() %}
+    <div class="skill"><div class="skill-label">{{ label }}</div><div class="skill-body">{{ text | mdi }}</div></div>
+    {% endfor %}
+  </section>
+
+  <section id="education">
+    <div class="section-head"><h2>Education &amp; languages</h2></div>
+    {% for ed in edu.entries %}
+    <div class="edu-row"><span><b>{{ ed.school }}</b> · {{ ed.degree }}</span><span class="edu-lang">{{ edu.languages }}</span></div>
+    {% endfor %}
+  </section>
+
+  <footer class="foot">
+    <div>{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a> · {% endfor %}<a href="mailto:{{ p.email }}">{{ p.email }}</a></div>
+    <div>Built from markdown · {{ built }}</div>
+  </footer>
+
+</main>
+</body>
+</html>

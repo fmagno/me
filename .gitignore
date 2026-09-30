@@ -1,0 +1,7 @@
+dist/cv.html
+.DS_Store
+__pycache__/
+
+# Private working material: never publish (Slack/Jira/Confluence research, cut content)
+research/
+drafts/
