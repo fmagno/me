@@ -10,4 +10,4 @@ Backend of the Global Intake Form in TELUS Health One, which lets employee-assis
 
 ### Impact
 
-Design and implementation of the backend for the initial build and launch, working with product, QA and front-end teams. Live since 1 July 2025 in the EU, AU, CA and US, serving thousands of requests.
+Design and implementation of the backend for the initial build and launch, working with product, QA and front-end teams. Live since 1 July 2025 in the EU, AU, CA and US, serving hundreds of requests in the first month.
