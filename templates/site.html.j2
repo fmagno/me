@@ -209,7 +209,7 @@ h2 { font-size: 28px; font-weight: 500; margin: 0; letter-spacing: -.3px; }
       <a href="#earlier" class="hide-sm">Earlier</a>
       <a href="#projects" class="hide-sm">Independent work</a>
       <a href="#skills" class="hide-sm">Skills</a>
-      <a href="cv.pdf" class="cv">CV · PDF</a>
+      <a href="{{ cv_file }}" class="cv">CV · PDF</a>
     </div>
   </div>
 </nav>
@@ -223,7 +223,7 @@ h2 { font-size: 28px; font-weight: 500; margin: 0; letter-spacing: -.3px; }
       <p class="hero-lede reveal d2">{{ summary | mdi }}</p>
       <ul class="pills reveal d2" aria-label="Key technologies">{% for x in p.pills %}<li>{{ x }}</li>{% endfor %}</ul>
       <div class="actions reveal d3">
-        <a class="btn btn-primary" href="cv.pdf">Download CV (PDF)</a>
+        <a class="btn btn-primary" href="{{ cv_file }}">Download CV (PDF)</a>
         <a class="btn btn-ghost" href="mailto:{{ p.email }}">{{ p.email }}</a>
         <a class="btn btn-ghost" href="{{ p.links[0].url }}">GitHub</a>
       </div>

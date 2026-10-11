@@ -31,6 +31,9 @@ ROOT = Path(__file__).parent
 CONTENT = ROOT / "content"
 DIST = ROOT / "dist"
 
+CV_FILE = "cv_francisco_magno.pdf"  # the file the landing page links to
+CV_ALIAS = "cv.pdf"  # identical copy for links already shared
+
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 
 
@@ -110,6 +113,7 @@ def load_all() -> dict:
         "skills_title": skills_meta.get("title", "Skills"),
         "edu": education,
         "built": date.today().isoformat(),
+        "cv_file": CV_FILE,
     }
 
 
@@ -133,8 +137,9 @@ def build_pdf(ctx: dict) -> None:
     html = env().get_template("cv.html.j2").render(**ctx)
     (DIST / "cv.html").write_text(html)
     doc = HTML(string=html, base_url=str(ROOT)).render()
-    doc.write_pdf(DIST / "cv.pdf")
-    print(f"dist/cv.pdf  ({len(doc.pages)} pages)")
+    doc.write_pdf(DIST / CV_FILE)
+    shutil.copyfile(DIST / CV_FILE, DIST / CV_ALIAS)  # old links keep working; same bytes, cannot drift
+    print(f"dist/{CV_FILE} + dist/{CV_ALIAS}  ({len(doc.pages)} pages)")
 
 
 def build_site(ctx: dict) -> None:
