@@ -81,7 +81,7 @@ h1 { font-size: clamp(38px, 6vw, 60px); font-weight: 500; line-height: 1.05; let
 .btn-primary:hover { background: var(--brand-light); border-color: var(--brand-light); color: var(--ivory); }
 .btn-ghost { color: var(--brand); }
 .btn-ghost:hover { background: var(--brand-tint); }
-.avatar { width: 168px; height: 168px; margin-top: 34px; border-radius: 50%; object-fit: cover;
+.avatar { display: block; width: 168px; height: 168px; margin-top: 34px; border-radius: 50%; object-fit: cover;
   border: 1px solid var(--border); filter: saturate(.85); }
 
 /* METRICS */
@@ -178,11 +178,24 @@ h2 { font-size: 28px; font-weight: 500; margin: 0; letter-spacing: -.3px; }
   @keyframes rise { to { opacity: 1; transform: none; } }
 }
 
+/* Omarchy stamp. Font: Omarchy Font by Mark Cuda, MIT, see assets/fonts/OmarchyFont-LICENSE.txt */
+@font-face { font-family: "Omarchy Font"; src: url("assets/fonts/OmarchyFont.ttf") format("truetype"); font-display: swap; }
+.stamp { transform: rotate(-6deg); text-align: center; color: var(--brand); border: 3px double var(--brand);
+  border-radius: 5px; padding: 7px 16px 8px; opacity: .93; flex: none; }
+.stamp .st-word { display: block; font-family: "Omarchy Font", var(--mono); font-size: 24px; letter-spacing: 3px; line-height: 1.15; }
+@media (max-width: 880px) { .avatar-col { order: -1; } }
+.foot .stamp { margin: 6px 6px 6px auto; }
+
+/* Body text is justified; short labels stay left-aligned. */
+p, .skill-body { text-align: justify; text-justify: inter-word; }
+.eyebrow { text-align: left; }
+@media (max-width: 880px) { p, .skill-body { hyphens: auto; -webkit-hyphens: auto; } .eyebrow { hyphens: manual; } }
+
 /* RESPONSIVE */
 @media (max-width: 880px) {
   .page, .nav-inner { padding-left: 24px; padding-right: 24px; }
   .hero { grid-template-columns: 1fr; padding-top: 56px; gap: 28px; }
-  .avatar { order: -1; width: 112px; height: 112px; margin-top: 0; }
+  .avatar { width: 112px; height: 112px; margin-top: 0; }
   .metrics { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
   .arc, .card-cols { grid-template-columns: 1fr; gap: 20px; }
   .skill { grid-template-columns: 1fr; gap: 4px; }
@@ -190,7 +203,7 @@ h2 { font-size: 28px; font-weight: 500; margin: 0; letter-spacing: -.3px; }
 @media (max-width: 480px) {
   .page, .nav-inner { padding-left: 16px; padding-right: 16px; }
   .nav-links { gap: 14px; } .nav-links .hide-sm { display: none; }
-  .hero-lede { font-size: 16px; text-align: left; }
+  .hero-lede { font-size: 16px; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
   .grid { grid-template-columns: 1fr; }
   .card { padding: 22px 20px; }
   .job { grid-template-columns: 1fr; gap: 2px; }
@@ -228,7 +241,9 @@ h2 { font-size: 28px; font-weight: 500; margin: 0; letter-spacing: -.3px; }
         <a class="btn btn-ghost" href="https://github.com/fmagno">GitHub</a>
       </div>
     </div>
-    <img class="avatar reveal" src="assets/me.jpeg" alt="Portrait of Francisco Magno" width="168" height="168">
+    <div class="avatar-col reveal">
+      <img class="avatar" src="assets/me.jpeg" alt="Portrait of Francisco Magno" width="168" height="168">
+    </div>
   </header>
 
 
@@ -339,7 +354,7 @@ at Instituto de Telecomunicações on predistortion models for RF power amplifie
 
   <footer class="foot">
     <div><a href="https://github.com/fmagno">github.com/fmagno</a> · <a href="https://www.linkedin.com/in/francisco-magno-781a23b/">linkedin</a> · <a href="https://stackoverflow.com/users/9396198/fmagno">stackoverflow</a> · <a href="mailto:flmagnom@gmail.com">flmagnom@gmail.com</a></div>
-  </footer>
+<div class="stamp" role="img" aria-label="Omarchy"><span class="st-word">OMARCHY</span></div>  </footer>
 
 </main>
 </body>

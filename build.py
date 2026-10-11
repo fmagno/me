@@ -17,6 +17,7 @@
 
 from __future__ import annotations
 
+import os
 import re
 import shutil
 import sys
@@ -29,7 +30,7 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 ROOT = Path(__file__).parent
 CONTENT = ROOT / "content"
-DIST = ROOT / "dist"
+DIST = ROOT / os.environ.get("PORTFOLIO_OUT", "dist")  # review builds go elsewhere
 
 CV_FILE = "cv_francisco_magno.pdf"  # the file the landing page links to
 CV_ALIAS = "cv.pdf"  # identical copy for links already shared
@@ -114,6 +115,7 @@ def load_all() -> dict:
         "edu": education,
         "built": date.today().isoformat(),
         "cv_file": CV_FILE,
+        "stamp": os.environ.get("PORTFOLIO_STAMP", "1"),  # Omarchy stamp on by default; PORTFOLIO_STAMP="" turns it off
     }
 
 
@@ -154,7 +156,7 @@ def main(argv: list[str]) -> None:
     target = argv[1] if len(argv) > 1 else "all"
     if target not in {"all", "pdf", "site"}:
         sys.exit(__doc__)
-    DIST.mkdir(exist_ok=True)
+    DIST.mkdir(parents=True, exist_ok=True)
     ctx = load_all()
     if target in {"all", "pdf"}:
         build_pdf(ctx)

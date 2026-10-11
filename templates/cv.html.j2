@@ -45,6 +45,14 @@
   .contact a { color: var(--dark-warm); }
   .contact .loc { color: var(--olive); font-weight: 500; }
 
+{% if stamp %}
+  /* Omarchy stamp (design review). Font: Omarchy Font by Mark Cuda, MIT, see assets/fonts/OmarchyFont-LICENSE.txt */
+  @font-face { font-family: "Omarchy Font"; src: url("assets/fonts/OmarchyFont.ttf") format("truetype"); }
+  .foot-stamp { display: flex; justify-content: flex-end; margin-top: 2mm; padding-right: 2mm; break-inside: avoid; }
+  .stamp { transform: rotate(-6deg); text-align: center;
+    color: var(--brand); border: 1.1pt double var(--brand); border-radius: 1.2mm; padding: 1.1mm 3mm 1.2mm; opacity: .9; }
+  .stamp .st-word { display: block; font-family: "Omarchy Font", var(--mono); font-size: 13pt; letter-spacing: 1.3pt; line-height: 1.15; }
+{% endif %}
   /* METRICS */
   .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 5mm; margin-bottom: 2mm; }
   .metric { padding: 1mm 0 1.2mm; display: flex; flex-direction: column; gap: 0.7mm; min-width: 0; }
@@ -54,7 +62,7 @@
   /* SECTION TITLE */
   .section-title {
     font-size: 13pt; font-weight: 500; border-bottom: 0.5pt solid var(--border);
-    padding: 0 0 1mm 0; margin: 3.6mm 0 1.6mm 0;
+    padding: 0 0 1mm 0; margin: 3.1mm 0 1.4mm 0;
     display: flex; align-items: baseline; justify-content: space-between; gap: 2.5mm;
   }
   .section-title .sub { font-weight: 400; font-size: 8.6pt; color: var(--stone); letter-spacing: 0.2pt; }
@@ -103,7 +111,7 @@
   .proj-stack { color: var(--stone); font-size: 8.4pt; }
 
   /* EARLIER ROLES */
-  .job { display: flex; gap: 4mm; padding: 1.2mm 0; border-bottom: 0.3pt dotted var(--border); break-inside: avoid; }
+  .job { display: flex; gap: 4mm; padding: 0.9mm 0; border-bottom: 0.3pt dotted var(--border); break-inside: avoid; }
   .job:last-child { border-bottom: none; }
   .job-when { width: 19mm; white-space: nowrap; flex-shrink: 0; font-size: 8.6pt; color: var(--stone); padding-top: 0.3mm; }
   .job-main { flex: 1; }
@@ -127,7 +135,7 @@
   .os-st { color: var(--stone); }
 
   /* SKILLS */
-  .skill-row { break-inside: avoid; display: flex; gap: 3mm; padding: 1.2mm 0; border-bottom: 0.3pt dotted var(--border); align-items: baseline; }
+  .skill-row { break-inside: avoid; display: flex; gap: 3mm; padding: 0.9mm 0; border-bottom: 0.3pt dotted var(--border); align-items: baseline; }
   .skill-row:last-of-type { border-bottom: none; }
   .skill-label {
     font-size: 8pt; font-weight: 500; color: var(--brand); letter-spacing: 0.5pt;
@@ -239,6 +247,10 @@
   </div>
   {% endfor %}
 </section>
+
+{% if stamp %}
+<div class="foot-stamp"><div class="stamp" role="img" aria-label="Omarchy"><span class="st-word">OMARCHY</span></div></div>
+{% endif %}
 
 </body>
 </html>

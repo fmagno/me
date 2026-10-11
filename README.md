@@ -33,3 +33,5 @@ python3 ~/.claude/plugins/cache/kami/kami/*/scripts/build.py --check-resume-bala
 
 Design: [kami](https://github.com/tw93/kami) tokens (parchment, ink blue, Charter), MIT.
 Source material: `agent81/repo/cv_rag_system/corpus`, the old Hugo site (fmagno/me), beans history.
+
+The OMARCHY stamp uses [Omarchy Font](https://github.com/markcuda/Omarchy-Font) by Mark Cuda (MIT, `assets/fonts/OmarchyFont-LICENSE.txt`). The Omarchy name and wordmark belong to DHH and 37signals; this site is not affiliated with them.

@@ -5,3 +5,6 @@ __pycache__/
 # Private working material: never publish (Slack/Jira/Confluence research, cut content)
 research/
 drafts/
+
+# Design review builds (not published)
+review/
